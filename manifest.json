@@ -1,22 +1,22 @@
 {
     "manifest_version": 2,
     "version": "0.0.1",
-    "name": "progressive_web_app_test_project",
-    "short_name": "pwa_test",
-    "theme_color": "#fcdd88",
-    "background_color": "#faf1d9",
+    "name": "PWA TEST PROJECT",
+    "short_name": "테스트",
+    "theme_color": "#6AC8F0",
+    "background_color": "#346D26",
     "display": "standalone",
     "orientation": "any",
     "scope": "/",
     "start_url": "/index.html",
     "icons": [
         {
-            "src": "assets/images/test-192x192.png",
+            "src": "images/test-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "assets/images/test-512x512.png",
+            "src": "images/test-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }        
