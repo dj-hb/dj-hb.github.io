@@ -4,3 +4,9 @@ setTimeout(() => {
   const myClass = document.querySelector('.my-class')
   myClass.appendChild(myTag)
 }, 1000)
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+  })
+}
