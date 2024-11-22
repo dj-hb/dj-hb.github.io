@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+console.log('registerServiceWorker.js')
 
 import { register } from 'register-service-worker'
 

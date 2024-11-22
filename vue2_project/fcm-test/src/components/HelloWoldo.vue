@@ -1,9 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <ul>
+    <!-- <ul>
       <li v-for="item in tstArr">{{ item }}</li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
@@ -12,6 +12,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import { getMessaging, getToken } from "firebase/messaging";
 
 export default {
   name: 'HelloWoldo',
@@ -20,7 +21,7 @@ export default {
   },
   data() {
     return {
-      tstArr: [],
+      // tstArr: [],
     }
   },
   async created() {
@@ -35,19 +36,32 @@ export default {
     };
 
     const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+    // const analytics = getAnalytics(app);
     
-    const db = getFirestore(app);
+    // const db = getFirestore(app);
     
-    const querySnapshot = await getDocs(collection(db, "202411221257"));
-    querySnapshot.forEach((doc) => {
-      // console.log(doc)
-      // console.log(`${doc.id} => ${doc.data()}`);
-      console.log(`${doc.id} => ${doc.data().drinkName}`);
-      this.tstArr.push(doc.data().drinkName);
-    });
-    
+    // const querySnapshot = await getDocs(collection(db, "202411221257"));
+    // querySnapshot.forEach((doc) => {
+    //   // console.log(doc)
+    //   // console.log(`${doc.id} => ${doc.data()}`);
+    //   console.log(`${doc.id} => ${doc.data().drinkName}`);
+    //   this.tstArr.push(doc.data().drinkName);
+    // });
 
+    function requestPermission() {
+      Notification.requestPermission().then((permission) => {
+        if (permission === 'granted') {
+          console.log('Notification permission granted.');
+        }
+      });
+    }
+
+    requestPermission();
+
+    const messaging = getMessaging();
+    // getToken(messaging, { vapidKey: 'BPOJ-uMo8YXdMRnv8u7gH9DHwfRFpOvqpN-oHySTvpWiAIl9laMhnJsqk_us4xUr4cFh1WMfhLAFJCoZGB_OHn4' })
+    const token = await getToken(messaging, { vapidKey: 'BPOJ-uMo8YXdMRnv8u7gH9DHwfRFpOvqpN-oHySTvpWiAIl9laMhnJsqk_us4xUr4cFh1WMfhLAFJCoZGB_OHn4' })
+    
   }
 }
 </script>
