@@ -70,7 +70,7 @@ export default {
     sendPush() {
       console.log('sendPush')
       console.log(this.token)
-      axios.post('http://127.0.0.1:5001/baedalgeek-6dcef/asia-northeast3/dev/notifications/push/send/concierge', {
+      axios.post('https://dev-tcl6vzsola-du.a.run.app/notifications/push/send/concierge', {
             token: this.token,
       },{
         headers: {Authorization: 'Basic BnuwqfXYajpms04h41Tyqe5mLnpQrPYelglzsYTbRL/mgEh35fM14XSg5NFY5ER4pSS9HLHn755JVx6af7CRPw==',},
