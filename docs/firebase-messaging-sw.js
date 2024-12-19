@@ -11,6 +11,16 @@ firebase.initializeApp({
   measurementId: "G-TGN6LLRD3D"
 })
 
+function requestPermission() {
+  Notification.requestPermission().then((permission) => {
+    if (permission === 'granted') {
+      console.log('Notification permission granted.');
+    }
+  });
+}
+
+requestPermission();
+
 const messaging = firebase.messaging();
 
 self.addEventListener("install", function (e) {
