@@ -38,15 +38,15 @@ export default {
 
     // const app = initializeApp(firebaseConfig);
 
-    function requestPermission() {
-      Notification.requestPermission().then((permission) => {
-        if (permission === 'granted') {
-          console.log('Notification permission granted.');
-        }
-      });
-    }
+    // function requestPermission() {
+    //   Notification.requestPermission().then((permission) => {
+    //     if (permission === 'granted') {
+    //       console.log('Notification permission granted.');
+    //     }
+    //   });
+    // }
 
-    requestPermission();
+    // requestPermission();
 
     // const messaging = getMessaging();
     // // getToken(messaging, { vapidKey: 'BPOJ-uMo8YXdMRnv8u7gH9DHwfRFpOvqpN-oHySTvpWiAIl9laMhnJsqk_us4xUr4cFh1WMfhLAFJCoZGB_OHn4' })
