@@ -4,6 +4,7 @@
     <!-- <ul>
       <li v-for="item in tstArr">{{ item }}</li>
     </ul> -->
+    <div>hello</div>
   </div>
 </template>
 
@@ -24,45 +25,34 @@ export default {
       // tstArr: [],
     }
   },
-  // async created() {
-  //   const firebaseConfig = {
-  //     apiKey: "AIzaSyAxwCiFs8F4cbP1mZvEs1iaeKRimSPvyZo",
-  //     authDomain: "fcm-test-9e465.firebaseapp.com",
-  //     projectId: "fcm-test-9e465",
-  //     storageBucket: "fcm-test-9e465.firebasestorage.app",
-  //     messagingSenderId: "38271062035",
-  //     appId: "1:38271062035:web:d682213c40e7d5688b6fe6",
-  //     measurementId: "G-TGN6LLRD3D"
-  //   };
+  async created() {
+    // const firebaseConfig = {
+    //   apiKey: "AIzaSyAxwCiFs8F4cbP1mZvEs1iaeKRimSPvyZo",
+    //   authDomain: "fcm-test-9e465.firebaseapp.com",
+    //   projectId: "fcm-test-9e465",
+    //   storageBucket: "fcm-test-9e465.firebasestorage.app",
+    //   messagingSenderId: "38271062035",
+    //   appId: "1:38271062035:web:d682213c40e7d5688b6fe6",
+    //   measurementId: "G-TGN6LLRD3D"
+    // };
 
-  //   const app = initializeApp(firebaseConfig);
-  //   // const analytics = getAnalytics(app);
+    // const app = initializeApp(firebaseConfig);
+
+    function requestPermission() {
+      Notification.requestPermission().then((permission) => {
+        if (permission === 'granted') {
+          console.log('Notification permission granted.');
+        }
+      });
+    }
+
+    requestPermission();
+
+    // const messaging = getMessaging();
+    // // getToken(messaging, { vapidKey: 'BPOJ-uMo8YXdMRnv8u7gH9DHwfRFpOvqpN-oHySTvpWiAIl9laMhnJsqk_us4xUr4cFh1WMfhLAFJCoZGB_OHn4' })
+    // const token = await getToken(messaging, { vapidKey: 'BPOJ-uMo8YXdMRnv8u7gH9DHwfRFpOvqpN-oHySTvpWiAIl9laMhnJsqk_us4xUr4cFh1WMfhLAFJCoZGB_OHn4' })
     
-  //   // const db = getFirestore(app);
-    
-  //   // const querySnapshot = await getDocs(collection(db, "202411221257"));
-  //   // querySnapshot.forEach((doc) => {
-  //   //   // console.log(doc)
-  //   //   // console.log(`${doc.id} => ${doc.data()}`);
-  //   //   console.log(`${doc.id} => ${doc.data().drinkName}`);
-  //   //   this.tstArr.push(doc.data().drinkName);
-  //   // });
-
-  //   function requestPermission() {
-  //     Notification.requestPermission().then((permission) => {
-  //       if (permission === 'granted') {
-  //         console.log('Notification permission granted.');
-  //       }
-  //     });
-  //   }
-
-  //   requestPermission();
-
-  //   const messaging = getMessaging();
-  //   // getToken(messaging, { vapidKey: 'BPOJ-uMo8YXdMRnv8u7gH9DHwfRFpOvqpN-oHySTvpWiAIl9laMhnJsqk_us4xUr4cFh1WMfhLAFJCoZGB_OHn4' })
-  //   const token = await getToken(messaging, { vapidKey: 'BPOJ-uMo8YXdMRnv8u7gH9DHwfRFpOvqpN-oHySTvpWiAIl9laMhnJsqk_us4xUr4cFh1WMfhLAFJCoZGB_OHn4' })
-    
-  // }
+  }
 }
 </script>
 
