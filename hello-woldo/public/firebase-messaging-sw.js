@@ -17,7 +17,7 @@
 self.addEventListener('notificationclick', function(event) {
   event.notification.close();
   event.waitUntil(
-    clients.openWindow('https://dj-hb.github.io')
+    clients.openWindow('https://www.naver.com')
   );
 })
 
