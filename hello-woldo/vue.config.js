@@ -6,5 +6,5 @@ module.exports = defineConfig({
   devServer: {
     port: 8090,
   },
-  outputDir: path.resolve(__dirname, '../../docs'),
+  outputDir: path.resolve(__dirname, '../docs'),
 })
